@@ -1,0 +1,284 @@
+<Activity mc:Ignorable="sap sap2010" x:Class="Sequence_Scenario1" this:Sequence_Scenario1.Product="Sling bag" xmlns="http://schemas.microsoft.com/netfx/2009/xaml/activities" xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006" xmlns:ra="clr-namespace:ReporterForUiPath.Activities;assembly=ReporterForUiPath.Activities" xmlns:sap="http://schemas.microsoft.com/netfx/2009/xaml/activities/presentation" xmlns:sap2010="http://schemas.microsoft.com/netfx/2010/xaml/activities/presentation" xmlns:scg="clr-namespace:System.Collections.Generic;assembly=System.Private.CoreLib" xmlns:sco="clr-namespace:System.Collections.ObjectModel;assembly=System.Private.CoreLib" xmlns:sd="clr-namespace:System.Data;assembly=System.Data.Common" xmlns:this="clr-namespace:" xmlns:ui="http://schemas.uipath.com/workflow/activities" xmlns:uix="http://schemas.uipath.com/workflow/activities/uix" xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml">
+  <x:Members>
+    <x:Property Name="ProductName" Type="InArgument(x:String)" />
+    <x:Property Name="Quantity" Type="InArgument(x:String)" />
+    <x:Property Name="Product" Type="InArgument(x:String)" />
+    <x:Property Name="Data1" Type="InArgument(sd:DataTable)" />
+    <x:Property Name="int_repid" Type="InArgument(x:Int32)" />
+    <x:Property Name="int_TestId" Type="InArgument(x:String)" />
+    <x:Property Name="str_SuiteId" Type="InArgument(x:String)" />
+  </x:Members>
+  <this:Sequence_Scenario1.Data1>
+    <InArgument x:TypeArguments="sd:DataTable" />
+  </this:Sequence_Scenario1.Data1>
+  <VisualBasic.Settings>
+    <x:Null />
+  </VisualBasic.Settings>
+  <sap:VirtualizedContainerService.HintSize>750.4,4259.2</sap:VirtualizedContainerService.HintSize>
+  <sap2010:WorkflowViewState.IdRef>Sequence_Scenario1_1</sap2010:WorkflowViewState.IdRef>
+  <TextExpression.NamespacesForImplementation>
+    <sco:Collection x:TypeArguments="x:String">
+      <x:String>System.Activities</x:String>
+      <x:String>System.Activities.Statements</x:String>
+      <x:String>System.Activities.Expressions</x:String>
+      <x:String>System.Activities.Validation</x:String>
+      <x:String>System.Activities.XamlIntegration</x:String>
+      <x:String>Microsoft.VisualBasic</x:String>
+      <x:String>Microsoft.VisualBasic.Activities</x:String>
+      <x:String>System</x:String>
+      <x:String>System.Collections</x:String>
+      <x:String>System.Collections.Generic</x:String>
+      <x:String>System.Collections.ObjectModel</x:String>
+      <x:String>System.Data</x:String>
+      <x:String>System.Diagnostics</x:String>
+      <x:String>System.Drawing</x:String>
+      <x:String>System.IO</x:String>
+      <x:String>System.Linq</x:String>
+      <x:String>System.Net.Mail</x:String>
+      <x:String>System.Xml</x:String>
+      <x:String>System.Xml.Linq</x:String>
+      <x:String>UiPath.Core</x:String>
+      <x:String>UiPath.Core.Activities</x:String>
+      <x:String>System.Windows.Markup</x:String>
+      <x:String>GlobalVariablesNamespace</x:String>
+      <x:String>GlobalConstantsNamespace</x:String>
+      <x:String>UiPath.UIAutomationNext.Enums</x:String>
+      <x:String>System.Runtime.Serialization</x:String>
+      <x:String>UiPath.UIAutomationCore.Contracts</x:String>
+      <x:String>UiPath.UIAutomationNext.Activities</x:String>
+      <x:String>UiPath.Shared.Activities</x:String>
+      <x:String>UiPath.Platform.ObjectLibrary</x:String>
+      <x:String>System.Security</x:String>
+      <x:String>System.ComponentModel</x:String>
+      <x:String>System.Reflection</x:String>
+      <x:String>ReporterForUiPath.Enums</x:String>
+      <x:String>ReporterForUiPath.Activities</x:String>
+      <x:String>System.Xml.Serialization</x:String>
+      <x:String>UiPath.Excel</x:String>
+      <x:String>UiPath.Excel.Activities</x:String>
+      <x:String>UiPath.UIAutomationNext.Activities.Models</x:String>
+      <x:String>UiPath.UIAutomationNext.Contracts</x:String>
+      <x:String>UiPath.UIAutomationNext.Models.CV</x:String>
+      <x:String>UiPath.DataTableUtilities</x:String>
+    </sco:Collection>
+  </TextExpression.NamespacesForImplementation>
+  <TextExpression.ReferencesForImplementation>
+    <sco:Collection x:TypeArguments="AssemblyReference">
+      <AssemblyReference>Microsoft.VisualBasic</AssemblyReference>
+      <AssemblyReference>mscorlib</AssemblyReference>
+      <AssemblyReference>System</AssemblyReference>
+      <AssemblyReference>System.Activities</AssemblyReference>
+      <AssemblyReference>System.ComponentModel.TypeConverter</AssemblyReference>
+      <AssemblyReference>System.Core</AssemblyReference>
+      <AssemblyReference>System.Data</AssemblyReference>
+      <AssemblyReference>System.Data.Common</AssemblyReference>
+      <AssemblyReference>System.Data.DataSetExtensions</AssemblyReference>
+      <AssemblyReference>System.Drawing</AssemblyReference>
+      <AssemblyReference>System.Drawing.Common</AssemblyReference>
+      <AssemblyReference>System.Drawing.Primitives</AssemblyReference>
+      <AssemblyReference>System.Linq</AssemblyReference>
+      <AssemblyReference>System.Net.Mail</AssemblyReference>
+      <AssemblyReference>System.ObjectModel</AssemblyReference>
+      <AssemblyReference>System.Private.CoreLib</AssemblyReference>
+      <AssemblyReference>System.Xaml</AssemblyReference>
+      <AssemblyReference>System.Xml</AssemblyReference>
+      <AssemblyReference>System.Xml.Linq</AssemblyReference>
+      <AssemblyReference>UiPath.System.Activities</AssemblyReference>
+      <AssemblyReference>UiPath.UiAutomation.Activities</AssemblyReference>
+      <AssemblyReference>UiPath.Studio.Constants</AssemblyReference>
+      <AssemblyReference>UiPath.UIAutomationNext</AssemblyReference>
+      <AssemblyReference>System.Private.ServiceModel</AssemblyReference>
+      <AssemblyReference>System.Runtime.Serialization.Formatters</AssemblyReference>
+      <AssemblyReference>System.Private.DataContractSerialization</AssemblyReference>
+      <AssemblyReference>System.Runtime.Serialization.Primitives</AssemblyReference>
+      <AssemblyReference>UiPath.UIAutomationCore</AssemblyReference>
+      <AssemblyReference>UiPath.UIAutomationNext.Activities</AssemblyReference>
+      <AssemblyReference>UiPath.OCR.Activities</AssemblyReference>
+      <AssemblyReference>ReporterForUiPath.Activities</AssemblyReference>
+      <AssemblyReference>UiPath.Excel.Activities</AssemblyReference>
+      <AssemblyReference>UiPath.Testing.Activities</AssemblyReference>
+      <AssemblyReference>UiPath.Platform</AssemblyReference>
+      <AssemblyReference>NPOI</AssemblyReference>
+      <AssemblyReference>UiPath.Excel.Activities.Design</AssemblyReference>
+      <AssemblyReference>System.Console</AssemblyReference>
+      <AssemblyReference>System.Configuration.ConfigurationManager</AssemblyReference>
+      <AssemblyReference>System.Security.Permissions</AssemblyReference>
+      <AssemblyReference>System.ComponentModel</AssemblyReference>
+      <AssemblyReference>System.Memory</AssemblyReference>
+      <AssemblyReference>System.Private.Uri</AssemblyReference>
+      <AssemblyReference>System.Runtime.InteropServices</AssemblyReference>
+      <AssemblyReference>System.ComponentModel.EventBasedAsync</AssemblyReference>
+      <AssemblyReference>PresentationFramework</AssemblyReference>
+      <AssemblyReference>WindowsBase</AssemblyReference>
+      <AssemblyReference>Microsoft.Win32.Primitives</AssemblyReference>
+      <AssemblyReference>System.ComponentModel.Primitives</AssemblyReference>
+      <AssemblyReference>System.Reflection.DispatchProxy</AssemblyReference>
+      <AssemblyReference>System.Reflection.TypeExtensions</AssemblyReference>
+      <AssemblyReference>System.Reflection.Metadata</AssemblyReference>
+      <AssemblyReference>UiPath.Workflow</AssemblyReference>
+      <AssemblyReference>UiPath.System.Activities.Design</AssemblyReference>
+      <AssemblyReference>UiPath.System.Activities.ViewModels</AssemblyReference>
+      <AssemblyReference>ReporterForUiPath</AssemblyReference>
+      <AssemblyReference>System.Private.Xml</AssemblyReference>
+      <AssemblyReference>UiPath.Excel</AssemblyReference>
+      <AssemblyReference>System.Data.SqlClient</AssemblyReference>
+    </sco:Collection>
+  </TextExpression.ReferencesForImplementation>
+  <Sequence DisplayName="Sequence_Scenario1" sap:VirtualizedContainerService.HintSize="760.8,4194.4" sap2010:WorkflowViewState.IdRef="Sequence_1">
+    <Sequence.Variables>
+      <Variable x:TypeArguments="x:Boolean" Name="bol_AddtoCart" />
+    </Sequence.Variables>
+    <sap:WorkflowViewStateService.ViewState>
+      <scg:Dictionary x:TypeArguments="x:String, x:Object">
+        <x:Boolean x:Key="IsExpanded">True</x:Boolean>
+      </scg:Dictionary>
+    </sap:WorkflowViewStateService.ViewState>
+    <uix:NApplicationCard AttachMode="ByInstance" CloseMode="Never" DisplayName="Use Browser Chrome: NNNOW - India's Leading Online Store For Top International Brands" sap:VirtualizedContainerService.HintSize="698.4,4082.4" sap2010:WorkflowViewState.IdRef="NApplicationCard_1" InteractionMode="DebuggerApi" ScopeGuid="6d473b10-8559-4562-8157-fc5897f4a6b5" Version="V2">
+      <uix:NApplicationCard.Body>
+        <ActivityAction x:TypeArguments="x:Object">
+          <ActivityAction.Argument>
+            <DelegateInArgument x:TypeArguments="x:Object" Name="WSSessionData" />
+          </ActivityAction.Argument>
+          <Sequence DisplayName="Do" sap:VirtualizedContainerService.HintSize="664.8,3865.6" sap2010:WorkflowViewState.IdRef="Sequence_2">
+            <sap:WorkflowViewStateService.ViewState>
+              <scg:Dictionary x:TypeArguments="x:String, x:Object">
+                <x:Boolean x:Key="IsExpanded">True</x:Boolean>
+              </scg:Dictionary>
+            </sap:WorkflowViewStateService.ViewState>
+            <ra:StepStatus ActualResult="{x:Null}" CodeBlock="{x:Null}" ContinueOnError="{x:Null}" ExpectedResult="{x:Null}" statusInfo="{x:Null}" DisplayName="Step Status" sap:VirtualizedContainerService.HintSize="602.4,134.4" sap2010:WorkflowViewState.IdRef="StepStatus_3" ReportId="[int_repid]" Status="Pass" StepDescription="Application should be launched" StepName="Verify the application was launched" TakeScreenshot="True" TestId="[int_TestId]" />
+            <uix:NTypeInto ActivateBefore="True" ClickBeforeMode="Single" DisplayName="Type Into 'INPUT 6290421705'" EmptyFieldMode="SingleLine" sap:VirtualizedContainerService.HintSize="602.4,218.4" sap2010:WorkflowViewState.IdRef="NTypeInto_1" ScopeIdentifier="6d473b10-8559-4562-8157-fc5897f4a6b5" Text="[Product]" Version="V3">
+              <uix:NTypeInto.Target>
+                <uix:TargetAnchorable BrowserURL="https://www.nnnow.com/" CvElementArea="197, 280, 524, 39" CvType="InputBox" DesignTimeRectangle="239, 283, 431, 35" DesignTimeScaleFactor="1.25" ElementType="InputBox" FriendlyName="'INPUT 6290421705'" FullSelectorArgument="&lt;webctrl tag='INPUT' class='nwc-inp  nw-searchbar-input' /&gt;" FuzzySelectorArgument="&lt;webctrl tag='INPUT' class='nwc-inp  nw-searchbar-input' type='text' aaname='' /&gt;" Guid="19bbab48-feec-467a-b71b-5867cfd86a2e" InformativeScreenshot="5eaabeeff395f649fdca45c20ccdbb4c.png" ScopeSelectorArgument="&lt;html app='chrome.exe' title='NNNOW - India&amp;apos;s Leading Online Store For Top International Brands' /&gt;" SearchSteps="Selector" Version="V2" Visibility="Interactive" />
+              </uix:NTypeInto.Target>
+            </uix:NTypeInto>
+            <uix:NClick ActivateBefore="True" ClickType="Single" DisplayName="Click 'I'" sap:VirtualizedContainerService.HintSize="602.4,157.6" sap2010:WorkflowViewState.IdRef="NClick_1" KeyModifiers="None" MouseButton="Left" ScopeIdentifier="6d473b10-8559-4562-8157-fc5897f4a6b5" Version="V3">
+              <uix:NClick.Target>
+                <uix:TargetAnchorable BrowserURL="https://www.nnnow.com/" DesignTimeRectangle="199, 290, 21, 20" DesignTimeScaleFactor="1.25" FriendlyName="'I'" FullSelectorArgument="&lt;webctrl css-selector='body&amp;gt;div&amp;gt;div&amp;gt;div&amp;gt;header&amp;gt;div&amp;gt;div&amp;gt;div&amp;gt;div&amp;gt;div&amp;gt;div&amp;gt;div&amp;gt;button&amp;gt;i' tag='I' /&gt;" FuzzySelectorArgument="&lt;webctrl type='' tag='I' class='icomoon-search3 nw-searchbar-leftsearchicon' aaname='' /&gt;" Guid="40e8d376-36c2-4f1d-9683-e82549a00a48" InformativeScreenshot="7dde09596564b927587bbf0d3568df81.png" ScopeSelectorArgument="&lt;html app='chrome.exe' title='NNNOW - India&amp;apos;s Leading Online Store For Top International Brands' /&gt;" SearchSteps="Selector" Version="V2" Visibility="Interactive" />
+              </uix:NClick.Target>
+            </uix:NClick>
+            <uix:NClick ActivateBefore="True" ClickType="Single" DisplayName="Click 'Calvin Klein Jeans'" sap:VirtualizedContainerService.HintSize="602.4,157.6" sap2010:WorkflowViewState.IdRef="NClick_2" KeyModifiers="None" MouseButton="Left" ScopeIdentifier="6d473b10-8559-4562-8157-fc5897f4a6b5" Version="V3">
+              <uix:NClick.Target>
+                <uix:TargetAnchorable BrowserURL="https://www.nnnow.com/search?q=Sling%20bag" CvTextArea="1000, 591, 165, 15" CvTextArgument="CALVIN KLEIN JEANS" CvType="Text" DesignTimeRectangle="888, 591, 392, 17" DesignTimeScaleFactor="1.25" ElementType="Text" FriendlyName="'Calvin Klein Jeans'" FullSelectorArgument="&lt;webctrl aaname='Calvin Klein Jeans' tag='H3' /&gt;" FuzzySelectorArgument="&lt;webctrl aaname='Calvin Klein Jeans' tag='H3' type='' class='nw-productview-brandtxt' check:innerText='CALVIN KLEIN JEANS' /&gt;" Guid="c5b54ab5-8477-4126-a6b3-661c9191770f" InformativeScreenshot="79f1a5221c406444faad7e0e0f2716a7.png" ScopeSelectorArgument="&lt;html app='chrome.exe' title='NNNOW - India&amp;apos;s Leading Online Store For Top International Brands' /&gt;" SearchSteps="Selector" Version="V2" Visibility="Interactive" />
+              </uix:NClick.Target>
+            </uix:NClick>
+            <uix:NApplicationCard AttachMode="ByInstance" DisplayName="Use Browser Chrome: Buy Calvin Klein Jeans Sustainable Monogram Sling Bag - NNNOW.com" sap:VirtualizedContainerService.HintSize="602.4,2922.4" sap2010:WorkflowViewState.IdRef="NApplicationCard_2" InteractionMode="DebuggerApi" ScopeGuid="53e933fe-f9fb-4e84-9486-b3709a23d5b4" Version="V2">
+              <uix:NApplicationCard.Body>
+                <ActivityAction x:TypeArguments="x:Object">
+                  <ActivityAction.Argument>
+                    <DelegateInArgument x:TypeArguments="x:Object" Name="WSSessionData" />
+                  </ActivityAction.Argument>
+                  <Sequence DisplayName="Do" sap:VirtualizedContainerService.HintSize="568.8,2705.6" sap2010:WorkflowViewState.IdRef="Sequence_3">
+                    <sap:WorkflowViewStateService.ViewState>
+                      <scg:Dictionary x:TypeArguments="x:String, x:Object">
+                        <x:Boolean x:Key="IsExpanded">True</x:Boolean>
+                      </scg:Dictionary>
+                    </sap:WorkflowViewStateService.ViewState>
+                    <uix:NClick ActivateBefore="True" ClickType="Single" DisplayName="Click '1'" sap:VirtualizedContainerService.HintSize="506.4,157.6" sap2010:WorkflowViewState.IdRef="NClick_3" KeyModifiers="None" MouseButton="Left" ScopeIdentifier="53e933fe-f9fb-4e84-9486-b3709a23d5b4" Version="V3">
+                      <uix:NClick.Target>
+                        <uix:TargetAnchorable BrowserURL="https://www.nnnow.com/calvin-klein-jeans-sustainable-monogram-sling-bag-ZBZ21IKUM6Q" CvElementArea="1215, 749, 61, 57" CvType="InputBox" DesignTimeRectangle="1218, 751, 56, 53" DesignTimeScaleFactor="1.25" FriendlyName="'1'" FullSelectorArgument="&lt;webctrl css-selector='body&amp;gt;div&amp;gt;div&amp;gt;div&amp;gt;div&amp;gt;div&amp;gt;div&amp;gt;div&amp;gt;div&amp;gt;div&amp;gt;div&amp;gt;div&amp;gt;div&amp;gt;div&amp;gt;div&amp;gt;div' idx='16' parentid='root' tag='DIV' /&gt;" FuzzySelectorArgument="&lt;webctrl type='' class='nwc-select-container nwc-select-secondary nwc-select nw-common-select nw-productrightpanel-dropdown  ' parentid='root' tag='DIV' aaname='' check:innerText='1' /&gt;" Guid="f53e4d21-5fe9-4eda-966d-f977f87ed727" InformativeScreenshot="04c87717756e77bcd477135886974d9e.png" ScopeSelectorArgument="&lt;html app='chrome.exe' title='Buy Calvin Klein Jeans Sustainable Monogram Sling Bag - NNNOW.com' /&gt;" SearchSteps="Selector" Version="V2" Visibility="Interactive" />
+                      </uix:NClick.Target>
+                    </uix:NClick>
+                    <ui:ClickText ContinueOnError="{x:Null}" DelayBefore="{x:Null}" DelayMS="{x:Null}" FormattedText="{x:Null}" SendWindowMessages="{x:Null}" ClickType="CLICK_SINGLE" DisplayName="Click Text 'UL'" sap:VirtualizedContainerService.HintSize="506.4,156" sap2010:WorkflowViewState.IdRef="ClickText_1" KeyModifiers="None" MouseButton="BTN_LEFT" Occurrence="1" Text="[Quantity]">
+                      <ui:ClickText.CursorPosition>
+                        <ui:CursorPosition Position="Center">
+                          <ui:CursorPosition.OffsetX>
+                            <InArgument x:TypeArguments="x:Int32" />
+                          </ui:CursorPosition.OffsetX>
+                          <ui:CursorPosition.OffsetY>
+                            <InArgument x:TypeArguments="x:Int32" />
+                          </ui:CursorPosition.OffsetY>
+                        </ui:CursorPosition>
+                      </ui:ClickText.CursorPosition>
+                      <ui:ClickText.Target>
+                        <ui:Target ClippingRegion="{x:Null}" Element="{x:Null}" Id="dd00b570-c81f-49dd-b312-825ffbb0fb7d" InformativeScreenshot="72f00c2e377d07fc7a1952b73792d7fc" Selector="&lt;webctrl class='nwc-select-list-container' tag='UL' /&gt;">
+                          <ui:Target.TimeoutMS>
+                            <InArgument x:TypeArguments="x:Int32" />
+                          </ui:Target.TimeoutMS>
+                          <ui:Target.WaitForReady>
+                            <InArgument x:TypeArguments="ui:WaitForReady" />
+                          </ui:Target.WaitForReady>
+                        </ui:Target>
+                      </ui:ClickText.Target>
+                    </ui:ClickText>
+                    <uix:NClick ActivateBefore="True" ClickType="Single" DisplayName="Click 'ADD TO BAG'" sap:VirtualizedContainerService.HintSize="506.4,157.6" sap2010:WorkflowViewState.IdRef="NClick_4" KeyModifiers="None" MouseButton="Left" ScopeIdentifier="53e933fe-f9fb-4e84-9486-b3709a23d5b4" Version="V3">
+                      <uix:NClick.Target>
+                        <uix:TargetAnchorable BrowserURL="https://www.nnnow.com/calvin-klein-jeans-sustainable-monogram-sling-bag-ZBZ21IKUM6Q" CvElementArea="1217, 638, 482, 66" CvTextArea="1391, 661, 130, 18" CvTextArgument="ADD TO BAG" CvType="Button" DesignTimeRectangle="1218, 640, 480, 62" DesignTimeScaleFactor="1.25" ElementType="Button" FriendlyName="'ADD TO BAG'" FullSelectorArgument="&lt;webctrl aaname='ADD TO BAG' tag='BUTTON' /&gt;" FuzzySelectorArgument="&lt;webctrl aaname='ADD TO BAG' tag='BUTTON' type='button' class='nwc-btn nwc-ripple-container nwc-btn-primary nw-pdp-addtobag' check:innerText='ADD TO BAG' /&gt;" Guid="18101548-8060-4d0f-bc9c-1f304f294884" InformativeScreenshot="1c1577cdce05ac494f4b587592617c4f.png" ScopeSelectorArgument="&lt;html app='chrome.exe' title='Buy Calvin Klein Jeans Sustainable Monogram Sling Bag - NNNOW.com' /&gt;" SearchSteps="Selector" Version="V2" Visibility="Interactive" />
+                      </uix:NClick.Target>
+                    </uix:NClick>
+                    <ui:MessageBox Caption="{x:Null}" ChosenButton="{x:Null}" AutoCloseAfter="00:00:00" DisplayName="Message Box" sap:VirtualizedContainerService.HintSize="506.4,85.6" sap2010:WorkflowViewState.IdRef="MessageBox_1" Text="[&quot;Product Added in to AddtoCart&quot;]" />
+                    <ra:StepStatus ActualResult="{x:Null}" CodeBlock="{x:Null}" ContinueOnError="{x:Null}" ExpectedResult="{x:Null}" ReportId="{x:Null}" TestId="{x:Null}" statusInfo="{x:Null}" DisplayName="Step Status" sap:VirtualizedContainerService.HintSize="506.4,134.4" sap2010:WorkflowViewState.IdRef="StepStatus_2" Status="Compare" StepDescription="Product Added Successfully" StepName="Add to Cart" TakeScreenshot="True" />
+                    <ui:ReadRange Range="{x:Null}" AddHeaders="True" DataTable="[Data1]" DisplayName="Read Range Workbook" sap:VirtualizedContainerService.HintSize="506.4,88" sap2010:WorkflowViewState.IdRef="ReadRange_1" SheetName="Sheet1" WorkbookPath="Data\TestData Scenario1.xlsx" />
+                    <uix:NClick ActivateBefore="True" ClickType="Single" DisplayName="Click 'I'" sap:VirtualizedContainerService.HintSize="506.4,157.6" sap2010:WorkflowViewState.IdRef="NClick_5" KeyModifiers="None" MouseButton="Left" ScopeIdentifier="53e933fe-f9fb-4e84-9486-b3709a23d5b4" Version="V3">
+                      <uix:NClick.Target>
+                        <uix:TargetAnchorable BrowserURL="https://www.nnnow.com/calvin-klein-jeans-sustainable-monogram-sling-bag-ZBZ21IKUM6Q" DesignTimeRectangle="1564, 227, 18, 17" DesignTimeScaleFactor="1.25" FriendlyName="'I'" FullSelectorArgument="&lt;webctrl css-selector='body&amp;gt;div&amp;gt;div&amp;gt;div&amp;gt;header&amp;gt;div&amp;gt;div&amp;gt;div&amp;gt;div&amp;gt;div&amp;gt;button&amp;gt;i' tag='I' /&gt;" FuzzySelectorArgument="&lt;webctrl type='' tag='I' class='icomoon-bag1 nw-favoriteslink1 nw-mybagbutton-icon' aaname='' /&gt;" Guid="73be8621-55e4-4692-b2d1-103255c91f7f" InformativeScreenshot="60e45d8cbbc28c7381be79df87de7246.png" ScopeSelectorArgument="&lt;html app='chrome.exe' title='Buy Calvin Klein Jeans Sustainable Monogram Sling Bag - NNNOW.com' /&gt;" SearchSteps="Selector" Version="V2" Visibility="Interactive" />
+                      </uix:NClick.Target>
+                    </uix:NClick>
+                    <uix:NClick ActivateBefore="True" ClickType="Single" DisplayName="Click 'VIEW SHOPPING BAG'" sap:VirtualizedContainerService.HintSize="506.4,157.6" sap2010:WorkflowViewState.IdRef="NClick_6" KeyModifiers="None" MouseButton="Left" ScopeIdentifier="53e933fe-f9fb-4e84-9486-b3709a23d5b4" Version="V3">
+                      <uix:NClick.Target>
+                        <uix:TargetAnchorable BrowserURL="https://www.nnnow.com/calvin-klein-jeans-sustainable-monogram-sling-bag-ZBZ21IKUM6Q" CvElementArea="1268, 549, 391, 70" CvTextArea="1345, 571, 233, 21" CvTextArgument="VIEW SHOPPING BAG" CvType="Button" DesignTimeRectangle="1270, 549, 388, 67" DesignTimeScaleFactor="1.25" ElementType="Button" FriendlyName="'VIEW SHOPPING BAG'" FullSelectorArgument="&lt;webctrl aaname='VIEW SHOPPING BAG' tag='BUTTON' type='button' /&gt;" FuzzySelectorArgument="&lt;webctrl aaname='VIEW SHOPPING BAG' tag='BUTTON' type='button' class='nwc-btn nwc-btn-secondary nw-mybagpopup-btn' check:innerText='VIEW SHOPPING BAG' /&gt;" Guid="01a92963-d0e0-4dd0-beec-8712837286ec" InformativeScreenshot="54b7030117889d39dce2731fcacc4c08.png" ScopeSelectorArgument="&lt;html app='chrome.exe' title='Buy Calvin Klein Jeans Sustainable Monogram Sling Bag - NNNOW.com' /&gt;" SearchSteps="Selector" Version="V2" Visibility="Interactive" />
+                      </uix:NClick.Target>
+                    </uix:NClick>
+                    <uix:NGetText DisplayName="Get Text 'Calvin Klein Jeans'" sap:VirtualizedContainerService.HintSize="506.4,157.6" sap2010:WorkflowViewState.IdRef="NGetText_2" ScopeIdentifier="53e933fe-f9fb-4e84-9486-b3709a23d5b4" TextString="[ProductName]" Version="V3">
+                      <uix:NGetText.Target>
+                        <uix:TargetAnchorable BrowserURL="https://www.nnnow.com/mybag" CvTextArea="347, 262, 131, 16" CvType="AnyWordGroup" DesignTimeRectangle="343, 261, 261, 26" DesignTimeScaleFactor="1.25" ElementType="Text" FriendlyName="'Calvin Klein Jeans'" FullSelectorArgument="&lt;webctrl tag='H3' /&gt;" FuzzySelectorArgument="&lt;webctrl tag='H3' type='' class='nw-cartproductview-brandname' /&gt;" Guid="038907bf-fd16-48cc-97bb-b6bbfdebe8ac" ImageBase64="" InformativeScreenshot="6765104e939816dad1227e273b6dd6e4.png" ScopeSelectorArgument="&lt;html app='chrome.exe' title='NNNOW - India&amp;apos;s Leading Online Store For Top International Brands' /&gt;" SearchSteps="Selector" Version="V2" Visibility="Interactive" />
+                      </uix:NGetText.Target>
+                    </uix:NGetText>
+                    <uix:NGetText DisplayName="Get Text '1'" sap:VirtualizedContainerService.HintSize="506.4,157.6" sap2010:WorkflowViewState.IdRef="NGetText_3" ScopeIdentifier="53e933fe-f9fb-4e84-9486-b3709a23d5b4" TextString="[Quantity]" Version="V3">
+                      <uix:NGetText.Target>
+                        <uix:TargetAnchorable BrowserURL="https://www.nnnow.com/mybag" CvElementArea="752, 259, 62, 58" CvType="InputBox" DesignTimeRectangle="764, 269, 39, 36" DesignTimeScaleFactor="1.25" ElementType="Text" FriendlyName="'1'" FullSelectorArgument="&lt;webctrl tag='LABEL' /&gt;" FuzzySelectorArgument="&lt;webctrl tag='LABEL' type='' class='nwc-select ' /&gt;" Guid="b2860b36-8c16-4377-b685-81b4876501a8" ImageBase64="" InformativeScreenshot="fa834c51d08ea7eb35708b712a8418a8.png" ScopeSelectorArgument="&lt;html app='chrome.exe' title='NNNOW - India&amp;apos;s Leading Online Store For Top International Brands' /&gt;" SearchSteps="Selector" Version="V2" Visibility="Interactive" />
+                      </uix:NGetText.Target>
+                    </uix:NGetText>
+                    <ui:ForEachRow ColumnNames="{x:Null}" CurrentIndex="{x:Null}" DataTable="[Data1]" DisplayName="For Each Row in Data Table" sap:VirtualizedContainerService.HintSize="506.4,780.8" sap2010:WorkflowViewState.IdRef="ForEachRow_1">
+                      <ui:ForEachRow.Body>
+                        <ActivityAction x:TypeArguments="sd:DataRow">
+                          <ActivityAction.Argument>
+                            <DelegateInArgument x:TypeArguments="sd:DataRow" Name="CurrentRow" />
+                          </ActivityAction.Argument>
+                          <Sequence DisplayName="Body" sap:VirtualizedContainerService.HintSize="472.8,663.2" sap2010:WorkflowViewState.IdRef="Sequence_4">
+                            <sap:WorkflowViewStateService.ViewState>
+                              <scg:Dictionary x:TypeArguments="x:String, x:Object">
+                                <x:Boolean x:Key="IsExpanded">True</x:Boolean>
+                              </scg:Dictionary>
+                            </sap:WorkflowViewStateService.ViewState>
+                            <If Condition="[CurrentRow(&quot;ProductName&quot;).ToString = ProductName OR CurrentRow(&quot;Quantity&quot;).ToString = Quantity]" sap:VirtualizedContainerService.HintSize="410.4,548" sap2010:WorkflowViewState.IdRef="If_1">
+                              <If.Then>
+                                <Sequence sap:VirtualizedContainerService.HintSize="376.8,182.4" sap2010:WorkflowViewState.IdRef="Sequence_5">
+                                  <sap:WorkflowViewStateService.ViewState>
+                                    <scg:Dictionary x:TypeArguments="x:String, x:Object">
+                                      <x:Boolean x:Key="IsExpanded">True</x:Boolean>
+                                    </scg:Dictionary>
+                                  </sap:WorkflowViewStateService.ViewState>
+                                  <ui:LogMessage DisplayName="Log Message" sap:VirtualizedContainerService.HintSize="333.6,92.8" sap2010:WorkflowViewState.IdRef="LogMessage_2" Level="Info" Message="[&quot;Product added Successfully&quot;]" />
+                                </Sequence>
+                              </If.Then>
+                              <If.Else>
+                                <Sequence sap:VirtualizedContainerService.HintSize="376.8,182.4" sap2010:WorkflowViewState.IdRef="Sequence_6">
+                                  <sap:WorkflowViewStateService.ViewState>
+                                    <scg:Dictionary x:TypeArguments="x:String, x:Object">
+                                      <x:Boolean x:Key="IsExpanded">True</x:Boolean>
+                                    </scg:Dictionary>
+                                  </sap:WorkflowViewStateService.ViewState>
+                                  <ui:LogMessage DisplayName="Log Message" sap:VirtualizedContainerService.HintSize="333.6,92.8" sap2010:WorkflowViewState.IdRef="LogMessage_3" Level="Info" Message="[&quot;Product adding failed&quot;]" />
+                                </Sequence>
+                              </If.Else>
+                            </If>
+                          </Sequence>
+                        </ActivityAction>
+                      </ui:ForEachRow.Body>
+                    </ui:ForEachRow>
+                  </Sequence>
+                </ActivityAction>
+              </uix:NApplicationCard.Body>
+              <uix:NApplicationCard.TargetApp>
+                <uix:TargetApp Area="-9, -9, 1938, 1048" BrowserType="Chrome" IconBase64="iVBORw0KGgoAAAANSUhEUgAAADAAAAAwCAYAAABXAvmHAAAAAXNSR0IArs4c6QAAAARnQU1BAACxjwv8YQUAAAAJcEhZcwAAEnQAABJ0Ad5mH3gAAAKiSURBVGhD1Zi/axNhHIf9U2xFURGponvmu8vd4uCgk7Obg0oHwenSSfwTXF1U/EEXG+wiNlGSGqOl1dIa04htwHAgDq/3EVLehu/dvT++74UMz3I0uc/DvccTemxnLj6eUnlzKr5683KtwsHStcXg70+vAurtMHiyFlUOev7hNUYWIHAvRYCH52ujdICw5cGNuyL98v+srociFRD9HX8wvsbIyhGBjfl4eOsSPUoHSuBFMxJ/Bl4i3ZyDowLg+Zl4QI3SgRIA7S9V9wLg/gV6mCpZAmC/5/elAbbQAp0Tdk8hT+B1K5QH2EILgEfnagk1ToU8AdDdDIbSCBuyBbbn4tHiRXpgEUUCeKGTPY9DIlsANE6aHaUiAYDr0hBT8gWASRtUBABDG4oFvs3HiW4bVAUY2lAsAHTboCoALNugJgCWFuixFDoC4Nd346OkLqDTBl2B5Q/GL7S6AHh8Nh5SgyfRFQCGbdATUG2DiQAwaIOeAFBpg6kA/lYap4K+AChqg6kA2N0OdH7smQkUtcFGQLMNZgIgrw02AqDZVW6DuQDIaoOtAFBsg51AVhs4BBTbYCcAqDZwCACFNtgLUG3gEgAFbbAXAJNt4BTA56XBk/AIALkNnAIgpw18AnIbuAVy2sAnAF6djnddCICMNvAKALTBhQAg2sAvgH9PuhIg2sAvAOrXb4/GN+EUABNtcCOwd+XO+AbsAuD3j8OjNJsC+M6ZFgBbXwM8hdkVQBsOen7LucDbTnWfGsCE+yfwecOnbsyFe4GtTU/UW9UhcXMOyhFoffLEs0bkQqIcgfWuJ959dHKUyhMAy+/DATHChnIFcJSerkUJMcSUcgXAajuYbQHwshn2iTEmTEeg0WF7oacjAJjaMD0BwNCG6QrYtyFa+Qfp9T6DG+lsJQAAAABJRU5ErkJggg==" InformativeScreenshot="d3c82d774d78d74664fd521254c41e6f.jpg" Selector="&lt;html app='chrome.exe' title='Buy Calvin Klein Jeans Sustainable Monogram Sling Bag - NNNOW.com' /&gt;" Title="Buy Calvin Klein Jeans Sustainable Monogram Sling Bag - NNNOW.com" Url="https://www.nnnow.com/calvin-klein-jeans-sustainable-monogram-sling-bag-ZBZ21IKUM6Q" />
+              </uix:NApplicationCard.TargetApp>
+            </uix:NApplicationCard>
+          </Sequence>
+        </ActivityAction>
+      </uix:NApplicationCard.Body>
+      <uix:NApplicationCard.TargetApp>
+        <uix:TargetApp Area="-9, -9, 1938, 1048" BrowserType="Chrome" IconBase64="iVBORw0KGgoAAAANSUhEUgAAADAAAAAwCAYAAABXAvmHAAAAAXNSR0IArs4c6QAAAARnQU1BAACxjwv8YQUAAAAJcEhZcwAAEnQAABJ0Ad5mH3gAAAKiSURBVGhD1Zi/axNhHIf9U2xFURGponvmu8vd4uCgk7Obg0oHwenSSfwTXF1U/EEXG+wiNlGSGqOl1dIa04htwHAgDq/3EVLehu/dvT++74UMz3I0uc/DvccTemxnLj6eUnlzKr5683KtwsHStcXg70+vAurtMHiyFlUOev7hNUYWIHAvRYCH52ujdICw5cGNuyL98v+srociFRD9HX8wvsbIyhGBjfl4eOsSPUoHSuBFMxJ/Bl4i3ZyDowLg+Zl4QI3SgRIA7S9V9wLg/gV6mCpZAmC/5/elAbbQAp0Tdk8hT+B1K5QH2EILgEfnagk1ToU8AdDdDIbSCBuyBbbn4tHiRXpgEUUCeKGTPY9DIlsANE6aHaUiAYDr0hBT8gWASRtUBABDG4oFvs3HiW4bVAUY2lAsAHTboCoALNugJgCWFuixFDoC4Nd346OkLqDTBl2B5Q/GL7S6AHh8Nh5SgyfRFQCGbdATUG2DiQAwaIOeAFBpg6kA/lYap4K+AChqg6kA2N0OdH7smQkUtcFGQLMNZgIgrw02AqDZVW6DuQDIaoOtAFBsg51AVhs4BBTbYCcAqDZwCACFNtgLUG3gEgAFbbAXAJNt4BTA56XBk/AIALkNnAIgpw18AnIbuAVy2sAnAF6djnddCICMNvAKALTBhQAg2sAvgH9PuhIg2sAvAOrXb4/GN+EUABNtcCOwd+XO+AbsAuD3j8OjNJsC+M6ZFgBbXwM8hdkVQBsOen7LucDbTnWfGsCE+yfwecOnbsyFe4GtTU/UW9UhcXMOyhFoffLEs0bkQqIcgfWuJ959dHKUyhMAy+/DATHChnIFcJSerkUJMcSUcgXAajuYbQHwshn2iTEmTEeg0WF7oacjAJjaMD0BwNCG6QrYtyFa+Qfp9T6DG+lsJQAAAABJRU5ErkJggg==" InformativeScreenshot="579580c8c1c7d5391a9bc43d35bdbd06.jpg" Selector="&lt;html app='chrome.exe' title='NNNOW - India&amp;apos;s Leading Online Store For Top International Brands' /&gt;" Title="NNNOW - India's Leading Online Store For Top International Brands" Url="https://www.nnnow.com/" />
+      </uix:NApplicationCard.TargetApp>
+    </uix:NApplicationCard>
+  </Sequence>
+</Activity>

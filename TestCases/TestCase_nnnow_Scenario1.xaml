@@ -1,16 +1,19 @@
-<Activity mc:Ignorable="sap sap2010" x:Class="TestCase_VerifySauceDemoLogin" this:TestCase_VerifySauceDemoLogin.UserName="standard_user" this:TestCase_VerifySauceDemoLogin.Password="secret_sauce" xmlns="http://schemas.microsoft.com/netfx/2009/xaml/activities" xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006" xmlns:o="clr-namespace:ObjectRepoLibrary;assembly=ObjectRepoLibrary" xmlns:ra="clr-namespace:ReporterForUiPath.Activities;assembly=ReporterForUiPath.Activities" xmlns:sap="http://schemas.microsoft.com/netfx/2009/xaml/activities/presentation" xmlns:sap2010="http://schemas.microsoft.com/netfx/2010/xaml/activities/presentation" xmlns:scg="clr-namespace:System.Collections.Generic;assembly=System.Private.CoreLib" xmlns:sco="clr-namespace:System.Collections.ObjectModel;assembly=System.Private.CoreLib" xmlns:this="clr-namespace:" xmlns:ui="http://schemas.uipath.com/workflow/activities" xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml">
+<Activity mc:Ignorable="sap sap2010" x:Class="TestCase_VerifySauceDemoLogin" xmlns="http://schemas.microsoft.com/netfx/2009/xaml/activities" xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006" xmlns:o="clr-namespace:ObjectRepoLibrary;assembly=ObjectRepoLibrary" xmlns:ra="clr-namespace:ReporterForUiPath.Activities;assembly=ReporterForUiPath.Activities" xmlns:sap="http://schemas.microsoft.com/netfx/2009/xaml/activities/presentation" xmlns:sap2010="http://schemas.microsoft.com/netfx/2010/xaml/activities/presentation" xmlns:scg="clr-namespace:System.Collections.Generic;assembly=System.Private.CoreLib" xmlns:sco="clr-namespace:System.Collections.ObjectModel;assembly=System.Private.CoreLib" xmlns:sd="clr-namespace:System.Data;assembly=System.Data.Common" xmlns:this="clr-namespace:" xmlns:ui="http://schemas.uipath.com/workflow/activities" xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml">
   <x:Members>
-    <x:Property Name="bol_LoginSuccess" Type="InArgument(x:Boolean)" />
-    <x:Property Name="UserName" Type="InArgument(x:String)" />
-    <x:Property Name="Password" Type="InArgument(x:String)" />
+    <x:Property Name="bol_AddtoCart" Type="OutArgument(x:Boolean)" />
+    <x:Property Name="ProductName" Type="InArgument(x:String)" />
+    <x:Property Name="Quantity" Type="InArgument(x:String)" />
   </x:Members>
-  <this:TestCase_VerifySauceDemoLogin.bol_LoginSuccess>
-    <InArgument x:TypeArguments="x:Boolean" />
-  </this:TestCase_VerifySauceDemoLogin.bol_LoginSuccess>
+  <this:TestCase_VerifySauceDemoLogin.ProductName>
+    <InArgument x:TypeArguments="x:String" />
+  </this:TestCase_VerifySauceDemoLogin.ProductName>
+  <this:TestCase_VerifySauceDemoLogin.Quantity>
+    <InArgument x:TypeArguments="x:String" />
+  </this:TestCase_VerifySauceDemoLogin.Quantity>
   <VisualBasic.Settings>
     <x:Null />
   </VisualBasic.Settings>
-  <sap:VirtualizedContainerService.HintSize>833.6,1664</sap:VirtualizedContainerService.HintSize>
+  <sap:VirtualizedContainerService.HintSize>723.2,1664</sap:VirtualizedContainerService.HintSize>
   <sap2010:WorkflowViewState.IdRef>TestCase_VerifySauceDemoLogin_1</sap2010:WorkflowViewState.IdRef>
   <TextExpression.NamespacesForImplementation>
     <sco:Collection x:TypeArguments="x:String">
@@ -107,14 +110,17 @@
       <AssemblyReference>WindowsBase</AssemblyReference>
       <AssemblyReference>Microsoft.Win32.Primitives</AssemblyReference>
       <AssemblyReference>System.ComponentModel.Primitives</AssemblyReference>
+      <AssemblyReference>NPOI</AssemblyReference>
+      <AssemblyReference>UiPath.Excel.Activities.Design</AssemblyReference>
+      <AssemblyReference>System.Data.SqlClient</AssemblyReference>
     </sco:Collection>
   </TextExpression.ReferencesForImplementation>
   <Sequence DisplayName="TestCase_VerifySauceDemoLogin" sap:VirtualizedContainerService.HintSize="512,1599.2" sap2010:WorkflowViewState.IdRef="Sequence_1">
     <Sequence.Variables>
+      <Variable x:TypeArguments="x:Boolean" Name="bol_AddtoCart" />
+      <Variable x:TypeArguments="x:String" Name="str_SuiteId" />
       <Variable x:TypeArguments="x:Int32" Name="int_repid" />
       <Variable x:TypeArguments="x:String" Name="int_TestId" />
-      <Variable x:TypeArguments="x:String" Name="str_SuiteId" />
-      <Variable x:TypeArguments="x:Boolean" Name="bol_LoginSuccess" />
     </Sequence.Variables>
     <sap:WorkflowViewStateService.ViewState>
       <scg:Dictionary x:TypeArguments="x:String, x:Object">
@@ -127,9 +133,9 @@
           <x:Boolean x:Key="IsExpanded">True</x:Boolean>
         </scg:Dictionary>
       </sap:WorkflowViewStateService.ViewState>
-      <ra:CreateReport ContinueOnError="{x:Null}" DisplayName="Create Report" sap:VirtualizedContainerService.HintSize="387.2,134.4" sap2010:WorkflowViewState.IdRef="CreateReport_1" ReportLocation="[System.Environment.CurrentDirectory+&quot;\Reports&quot;]" ReportName="SauceDemo" isCreated="[int_repid]" />
-      <ra:StartSuite ContinueOnError="{x:Null}" DisplayName="Start Suite" sap:VirtualizedContainerService.HintSize="387.2,85.6" sap2010:WorkflowViewState.IdRef="StartSuite_1" ReportId="[int_repid]" SuiteName="Verify SauceDemo Login" suiteId="[str_SuiteId]" />
-      <ra:StartTest ContinueOnError="{x:Null}" TagName="{x:Null}" TestDescription="{x:Null}" DisplayName="Start Test" sap:VirtualizedContainerService.HintSize="387.2,85.6" sap2010:WorkflowViewState.IdRef="StartTest_1" Priority="Low" ReportId="[int_repid]" SuiteId="[str_SuiteId]" TestName="TC-01_Login_VerifySauceDemo" testId="[int_TestId]" />
+      <ra:CreateReport ContinueOnError="{x:Null}" DisplayName="Create Report" sap:VirtualizedContainerService.HintSize="387.2,134.4" sap2010:WorkflowViewState.IdRef="CreateReport_1" ReportLocation="[System.Environment.CurrentDirectory+&quot;\Reports&quot;]" ReportName="nnnow" isCreated="[int_repid]" />
+      <ra:StartSuite ContinueOnError="{x:Null}" DisplayName="Start Suite" sap:VirtualizedContainerService.HintSize="387.2,85.6" sap2010:WorkflowViewState.IdRef="StartSuite_1" ReportId="[int_repid]" SuiteName="Add to Cart" suiteId="[str_SuiteId]" />
+      <ra:StartTest ContinueOnError="{x:Null}" TagName="{x:Null}" TestDescription="{x:Null}" DisplayName="Start Test" sap:VirtualizedContainerService.HintSize="387.2,85.6" sap2010:WorkflowViewState.IdRef="StartTest_1" Priority="Low" ReportId="[int_repid]" SuiteId="[str_SuiteId]" TestName="TC-02_Product_AddtoCart" testId="[int_TestId]" />
       <ui:InvokeWorkflowFile ArgumentsVariable="{x:Null}" ContinueOnError="{x:Null}" DisplayName="TestFramework\SetUp.xaml - Invoke Workflow File" sap:VirtualizedContainerService.HintSize="387.2,113.6" sap2010:WorkflowViewState.IdRef="InvokeWorkflowFile_1" UnSafe="False" WorkflowFileName="TestFramework\SetUp.xaml">
         <ui:InvokeWorkflowFile.Arguments>
           <scg:Dictionary x:TypeArguments="x:String, Argument" />
@@ -142,15 +148,30 @@
           <x:Boolean x:Key="IsExpanded">True</x:Boolean>
         </scg:Dictionary>
       </sap:WorkflowViewStateService.ViewState>
-      <ui:InvokeWorkflowFile ArgumentsVariable="{x:Null}" ContinueOnError="{x:Null}" DisplayName="Business Components\BC_LoginSauceDemo.xaml - Invoke Workflow File" sap:VirtualizedContainerService.HintSize="387.2,113.6" sap2010:WorkflowViewState.IdRef="InvokeWorkflowFile_3" UnSafe="False" WorkflowFileName="Business Components\BC_LoginSauceDemo.xaml">
+      <ui:InvokeWorkflowFile ArgumentsVariable="{x:Null}" ContinueOnError="{x:Null}" DisplayName="BC_Sequence_Scenario1.xaml - Invoke Workflow File" sap:VirtualizedContainerService.HintSize="387.2,113.6" sap2010:WorkflowViewState.IdRef="InvokeWorkflowFile_3" UnSafe="False" WorkflowFileName="Business Components\BC_Sequence_Scenario1.xaml">
         <ui:InvokeWorkflowFile.Arguments>
-          <InArgument x:TypeArguments="x:String" x:Key="str_UserName">[UserName]</InArgument>
-          <InArgument x:TypeArguments="x:String" x:Key="str_Password">[Password]</InArgument>
-          <InArgument x:TypeArguments="x:Int32" x:Key="int_repid">[int_repid]</InArgument>
-          <InArgument x:TypeArguments="x:String" x:Key="str_TestId">[int_TestId]</InArgument>
+          <InArgument x:TypeArguments="x:String" x:Key="ProductName">
+            <VisualBasicValue x:TypeArguments="x:String" ExpressionText="ProductName" />
+          </InArgument>
+          <InArgument x:TypeArguments="x:String" x:Key="Quantity">
+            <VisualBasicValue x:TypeArguments="x:String" ExpressionText="Quantity" />
+          </InArgument>
+          <InArgument x:TypeArguments="x:String" x:Key="Product">
+            <Literal x:TypeArguments="x:String">Sling bag</Literal>
+          </InArgument>
+          <InArgument x:TypeArguments="sd:DataTable" x:Key="Data1" />
+          <InArgument x:TypeArguments="x:Int32" x:Key="int_repid">
+            <VisualBasicValue x:TypeArguments="x:Int32" ExpressionText="int_repid" />
+          </InArgument>
+          <InArgument x:TypeArguments="x:String" x:Key="int_TestId">
+            <VisualBasicValue x:TypeArguments="x:String" ExpressionText="int_TestId" />
+          </InArgument>
+          <InArgument x:TypeArguments="x:String" x:Key="str_SuiteId">
+            <VisualBasicValue x:TypeArguments="x:String" ExpressionText="str_SuiteId" />
+          </InArgument>
         </ui:InvokeWorkflowFile.Arguments>
       </ui:InvokeWorkflowFile>
-      <o:BC_VerifyLogin_OkButton DisplayName="BC VerifyLogin OkButton" sap:VirtualizedContainerService.HintSize="387.2,90.4" sap2010:WorkflowViewState.IdRef="BC_VerifyLogin_OkButton_1" bol_LoginSuccess="[bol_LoginSuccess]" />
+      <o:BC_VerifyLogin_OkButton DisplayName="BC Add to Cart" sap:VirtualizedContainerService.HintSize="387.2,90.4" sap2010:WorkflowViewState.IdRef="BC_VerifyLogin_OkButton_2" bol_LoginSuccess="[bol_AddtoCart]" />
     </Sequence>
     <Sequence DisplayName="... Then" sap:VirtualizedContainerService.HintSize="449.6,400" sap2010:WorkflowViewState.IdRef="Sequence_4">
       <sap:WorkflowViewStateService.ViewState>
@@ -158,7 +179,7 @@
           <x:Boolean x:Key="IsExpanded">True</x:Boolean>
         </scg:Dictionary>
       </sap:WorkflowViewStateService.ViewState>
-      <ra:StepStatus CodeBlock="{x:Null}" ContinueOnError="{x:Null}" statusInfo="{x:Null}" ActualResult="[bol_LoginSuccess.ToString]" DisplayName="Step Status" ExpectedResult="True" sap:VirtualizedContainerService.HintSize="387.2,134.4" sap2010:WorkflowViewState.IdRef="StepStatus_1" ReportId="[int_repid]" Status="Compare" StepDescription="Login Should be Successful" StepName="Verify Login was Successful" TakeScreenshot="True" TestId="[int_TestId]" />
+      <ra:StepStatus ActualResult="{x:Null}" CodeBlock="{x:Null}" ContinueOnError="{x:Null}" ExpectedResult="{x:Null}" statusInfo="{x:Null}" DisplayName="Step Status" sap:VirtualizedContainerService.HintSize="387.2,134.4" sap2010:WorkflowViewState.IdRef="StepStatus_1" ReportId="[int_repid]" Status="Pass" StepDescription="Product added Should be Successful" StepName="Verify Product added was Successful" TakeScreenshot="True" TestId="[int_TestId]" />
       <ui:InvokeWorkflowFile ArgumentsVariable="{x:Null}" ContinueOnError="{x:Null}" DisplayName="TestFramework\TearDown.xaml - Invoke Workflow File" sap:VirtualizedContainerService.HintSize="387.2,113.6" sap2010:WorkflowViewState.IdRef="InvokeWorkflowFile_2" UnSafe="False" WorkflowFileName="TestFramework\TearDown.xaml">
         <ui:InvokeWorkflowFile.Arguments>
           <scg:Dictionary x:TypeArguments="x:String, Argument" />
